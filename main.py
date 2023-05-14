@@ -2,28 +2,12 @@ from urllib.parse import urljoin
 import json
 import uvicorn
 import ast
+from fastapi import FastAPI
 import requests
 import argparse
 from dtype import METADATA
 
-# Replace this with the value of your endpoint 
-# ENDPOINT_URL = "https://test1-intern-kanishq.demo1.truefoundry.com/v2/models/test1/infer"
-
-# inp = {"inputs":[
-#                 {"name":"array_inputs",
-#                  "datatype":"BYTES",
-#                  "shape":[-1],
-#                  "parameters":{"content_type":"str"},
-#                  "data":["Hi, I recently bought a device from your company but it is not working as advertised and I would like to get reimbursed!"]},
-#                 {"name":"candidate_labels",
-#                  "datatype":"BYTES",
-#                  "shape":[-1],
-#                  "parameters":{"content_type":"str"},
-#                  "data": ["refund", "legal", "faq"]}
-#                   ],
-#         "outputs":[],
-#         "parameters":{}
-# }
+app = FastAPI()
 
 def query_conversion(query:dict):
     query_list= []
@@ -78,6 +62,4 @@ if __name__ == '__main__':
 
     query = ast.literal_eval(args.query)
 
-    # response = app(query=query, pipeline=args.hf_pipeline, endpoint_url=args.endpoint_url)
-
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="127.0.0.1", port=8000)
