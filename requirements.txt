@@ -1,7 +1,0 @@
-fastapi
-numpy
-pandas
-uvicorn
-requests
-typing
-mlserver
