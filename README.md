@@ -17,7 +17,7 @@ curl --request POST \
 
 Clone the repository
 ```bash
-git clone https://github.com/Darke0-0/trufoundry_assign.git && cd fastapi-service
+git clone https://github.com/Darke0-0/fastapi-service.git && cd fastapi-service
 ```
 
 Create a virtual environment and activate it:
